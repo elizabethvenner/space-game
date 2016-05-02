@@ -1,0 +1,63 @@
+var user = prompt("You're flying a spaceship when you spot the vessel of your deadliest enemy. Do you FLEE, ATTACK or NEGOTIATE?").toUpperCase();
+
+switch (user){
+    case 'FLEE':
+        var seeYou = prompt("Did he see you?").toUpperCase();
+        var fast = prompt("Is your spaceship fast?").toUpperCase();
+        if (seeYou === "YES" && fast === "NO"){
+            console.log("You didn't have a chance! He gave chase and blasted you to smithereens!");
+        }else if(seeYou === "YES" && fast === "YES"){
+            console.log("Luckily you outran him but that was a close call!");
+        }else if (seeYou ==="NO" && fast === "YES"){
+            console.log("Top marks for alertness and alacrity!");
+        }else{            
+        console.log("You're safe for now. But you're moving slowly so watch your back");
+        }
+        break;
+    case 'ATTACK':
+        var bigGun = prompt("Do you have a big gun?").toLowerCase();
+        var shield = prompt("Does your enemy have strong shields?").toLowerCase();
+        if (bigGun === "yes" || shield === "no"){
+            console.log("You have vanquished your enemy!");
+        }else{
+        console.log("Oh no, what were you thinking, you muppet? He totally took you down and now you and your spaceship have been blasted into smithereens!");
+        }
+        break;
+    case 'NEGOTIATE':
+        var negSkills = prompt ("Do you have strong negotiating skills?").toLowerCase();
+        var reasonableMan = prompt ("Is your nemesis a reasonable man?").toLowerCase();
+        if (negSkills === "yes" && reasonableMan === "yes"){
+            console.log("Seems like your enemy wants to bury the hatchett as well. You're both now free to roam the starry skies!");
+        }else{
+            var newChoice = prompt("Well, that's a bit silly. Why would you try negotiating in those conditions? You now need to ATTACK or FLEE").toUpperCase();
+            switch (newChoice){
+                case 'ATTACK':
+                    var bigGun = prompt("Do you have a big gun?").toLowerCase();
+        var shield = prompt("Does your enemy have strong shields?").toLowerCase();
+        if (bigGun === "yes" || shield === "no"){
+            console.log("You have vanquished your enemy!");
+        }else{
+        console.log("Oh no, what were you thinking, you muppet? He totally took you down and now you and your spaceship have been blasted into smithereens!");
+        }
+        break;
+        case 'FLEE':
+        var seeYou = prompt("Did he see you?").toUpperCase();
+        var fast = prompt("Is your spaceship fast?").toUpperCase();
+        if (seeYou === "YES" && fast === "NO"){
+            console.log("You didn't have a chance! He gave chase and blasted you to smithereens!");
+        }else if(seeYou === "YES" && fast === "YES"){
+            console.log("Luckily you outran him but that was a close call!");
+        }else if (seeYou ==="NO" && fast === "YES"){
+            console.log("Top marks for alertness and alacrity!");
+        }else{            
+        console.log("You're safe for now. But you're moving slowly so watch your back");
+        }
+        break;
+        default:
+        console.log("That doesn't make sense! Unfortunately, spouting nonsense has lost you time, Nemesis McEnemy has lasered your spaceship and you're dead!");
+            }
+        }
+        break;
+    default:
+        console.log("That won't work. Your only options are to FLEE, ATTACK or NEGOTIATE. Click 'Run' to try again.");
+}
